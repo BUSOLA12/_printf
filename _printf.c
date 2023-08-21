@@ -47,7 +47,6 @@ count += temp_count;
 i++;
 }
 }
-_putchar('\n');
 va_end(args);
 return (count);
 }
