@@ -54,6 +54,7 @@ int count = 0;
 
 if (_strchr("scidbu", next) == NULL)
 {
+_putchar('%');
 _putchar(next);
 count += 1;
 return (count);
