@@ -1,48 +1,6 @@
 #include "main.h"
 
 /**
-* handling_int - a function that handles the integer format specifier
-* @next: the next character after the % symbol
-* @args: the list of arguments
-*
-* Return: the number of characters printed
-*/
-int handling_int(char next, va_list args)
-{
-int num;
-int count = 0;
-
-if (next == 'd' || next == 'i')
-{
-num = va_arg(args, int);
-print_int(num);
-count += count_int_chars(num);
-return (count);
-}
-return (0);
-}
-/**
-* handling_string - a function that handles the string format specifier
-* @next: the next character after the % symbol
-* @args: the list of arguments
-*
-* Return: the number of characters printed
-*/
-int handling_string(char next, va_list args)
-{
-char *str;
-int count = 0;
-
-if (next == 's')
-{
-str = va_arg(args, char *);
-print_string(str);
-count += _strlen(str);
-return (count);
-}
-return (0);
-}
-/**
 * handling_others - a function that handles other format specifiers
 * @next: the next character after the % symbol
 *
@@ -52,7 +10,7 @@ int handling_others(char next)
 {
 int count = 0;
 
-if (_strchr("scidbu", next) == NULL)
+if (_strchr("scidbur", next) == NULL)
 {
 if (next != '%')
 {
@@ -108,4 +66,26 @@ count = print_uint(value);
 return (count);
 }
 return (0);
+}
+
+
+/**
+ * handling_rstr - a functiom that handles reversed string
+ * @next: the next character afters the % symbol
+ * @args: the list of arguments
+ *
+ * Return: the number of characters printed
+ */
+int handling_rstr(char next, va_list args)
+{
+	char *str;
+	int count;
+
+	if (next == 'r')
+	{
+		str = va_arg(args, char *);
+		count = print_reverse(str);
+		return (count);
+	}
+	return (0);
 }

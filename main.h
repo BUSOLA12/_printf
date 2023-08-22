@@ -18,6 +18,8 @@ int handling_string(char next, va_list args);
 int handling_others(char next);
 int handling_bicon(char next, va_list args);
 int handling_uint(char next, va_list args);
+int handling_rstr(char next, va_list args);
+int handle_format_specifiers(char next, va_list args);
 
 
 /*print functions*/
@@ -26,6 +28,7 @@ void print_string(const char *str);
 void print_int(int n);
 int print_binary(char *binary);
 int print_uint(unsigned int x);
+int print_reverse(char *str);
 
 
 

@@ -13,8 +13,12 @@
 int print_binary(char *binary)
 {
 int count = 0;
-
-count = write(1, binary, _strlen(binary));
+int i;
+for (i = 0; binary[i] != '\0'; i++)
+{
+_putchar(binary[i]);
+count++;
+}
 return (count);
 }
 
@@ -35,8 +39,13 @@ if (x >= 10)
 {
 count += print_uint(x / 10);
 }
+
 c = '0' + x % 10;
-write(1, &c, 1);
+
+_putchar(c);
+
 count++;
+
 return (count);
 }
+

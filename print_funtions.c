@@ -19,9 +19,11 @@ return (write(1, &c, 1));
 */
 void print_string(const char *str)
 {
-int len;
-len = _strlen(str);
-write(1, str, len);
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+_putchar(str[i]);
+}
 }
 
 /**
@@ -30,13 +32,13 @@ write(1, str, len);
 */
 void print_int(int n)
 {
-char buffer[20];
+char digit_buffer[20];
 int i = 0;
 int neg = 0;
 
 if (n == 0)
 {
-write(1, "0", 1);
+_putchar('0');
 return;
 }
 
@@ -48,17 +50,35 @@ n = -n;
 
 while (n > 0)
 {
-buffer[i++] = (n % 10) + '0';
+digit_buffer[i++] = (n % 10) + '0';
 n /= 10;
 }
 
 if (neg)
 {
-buffer[i++] = '-';
+digit_buffer[i++] = '-';
 }
+
 while (--i >= 0)
 {
-write(1, &buffer[i], 1);
+_putchar(digit_buffer[i]);
 }
+}
+
+/**
+* print_reverse - prints a string in reverse
+* @str: string to print
+*
+* Return: number of characters printed
+*/
+int print_reverse(char *str)
+{
+int len = strlen(str);
+int i;
+for (i = len - 1; i >= 0; i--)
+{
+_putchar(str[i]);
+}
+return (len);
 }
 
