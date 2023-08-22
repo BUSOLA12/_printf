@@ -50,22 +50,22 @@ return (count);
 }
 
 /**
- * print_octal - a function that prints an octal notation string
- * @octal: the octal notation string to be printed
- *
- * Return: the number of characters printed
- */
+* print_octal - a function that prints an octal notation string
+* @octal: the octal notation string to be printed
+*
+* Return: the number of characters printed
+*/
 int print_octal(char *octal)
 {
-    int i, len;
+int i, len;
 
-    len = _strlen(octal);
+len = _strlen(octal);
 
-    for (i = 0; i < len; i++)
-    {
-        _putchar(octal[i]);
-    }
+for (i = 0; i < len; i++)
+{
+_putchar(octal[i]);
+}
 
-    return (len);
+return (len);
 }
 

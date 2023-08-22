@@ -42,8 +42,13 @@ return (count);
 }
 return (0);
 }
-
-
+/**
+ * handling_octal - handles the octal conversion specifier
+ * @next: the next character after the specifier
+ * @args: the argument list
+ *
+ * Return: the number of characters printed
+ */
 int handling_octal(char next, va_list args)
 {
 	int count;

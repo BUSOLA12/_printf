@@ -60,7 +60,8 @@ return (result);
 }
 
 /**
-* uint_to_octal - a function that converts an unsigned int into its octal notation
+* uint_to_octal - a function that converts an
+* unsigned int into its octal notation
 * @n: the unsigned integer to be converted
 *
 * Return: a pointer to the octal notation of n
