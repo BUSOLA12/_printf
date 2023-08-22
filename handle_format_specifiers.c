@@ -30,6 +30,8 @@ temp_count = handling_octal(next, args);
 count += temp_count;
 temp_count = handling_hex(next, args);
 count += temp_count;
+temp_count = handling_hex_upper(next, args);
+count += temp_count;
 return (count);
 }
 
