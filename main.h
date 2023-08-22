@@ -20,6 +20,7 @@ int handling_bicon(char next, va_list args);
 int handling_uint(char next, va_list args);
 int handling_rstr(char next, va_list args);
 int handle_format_specifiers(char next, va_list args);
+int handling_octal(char next, va_list args);
 
 
 /*print functions*/
@@ -29,6 +30,7 @@ void print_int(int n);
 int print_binary(char *binary);
 int print_uint(unsigned int x);
 int print_reverse(char *str);
+int print_octal(char *octal);
 
 
 
@@ -38,5 +40,6 @@ size_t _strlen(const char *str);
 char *_strchr(const char *s, int c);
 int count_int_chars(int num);
 char *int_to_binary(unsigned int n);
+char *uint_to_octal(unsigned int n);
 
 #endif

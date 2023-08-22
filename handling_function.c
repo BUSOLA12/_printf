@@ -10,7 +10,7 @@ int handling_others(char next)
 {
 int count = 0;
 
-if (_strchr("scidbur", next) == NULL)
+if (_strchr("scidburo", next) == NULL)
 {
 if (next != '%')
 {

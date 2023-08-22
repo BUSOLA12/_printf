@@ -42,3 +42,20 @@ return (count);
 }
 return (0);
 }
+
+
+int handling_octal(char next, va_list args)
+{
+	int count;
+	unsigned int value;
+	char *octal;
+
+	if (next == 'o')
+	{
+		value = va_arg(args, unsigned int);
+		octal = uint_to_octal(value);
+		count = print_octal(octal);
+		return (count);
+	}
+	return (0);
+}

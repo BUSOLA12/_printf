@@ -26,7 +26,8 @@ temp_count = handling_uint(next, args);
 count += temp_count;
 temp_count = handling_rstr(next, args);
 count += temp_count;
-
+temp_count = handling_octal(next, args);
+count += temp_count;
 return (count);
 }
 

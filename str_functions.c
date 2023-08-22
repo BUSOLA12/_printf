@@ -58,3 +58,45 @@ result[i] = buffer[len - i - 1];
 result[len] = '\0';
 return (result);
 }
+
+/**
+* uint_to_octal - a function that converts an unsigned int into its octal notation
+* @n: the unsigned integer to be converted
+*
+* Return: a pointer to the octal notation of n
+*/
+char *uint_to_octal(unsigned int n)
+{
+char *octal;
+int i, j, rem;
+int len = 0;
+unsigned int temp = n;
+
+while (temp > 0)
+{
+len++;
+temp /= 8;
+}
+
+octal = malloc(len + 1);
+
+i = 0;
+while (n > 0)
+{
+rem = n % 8;
+octal[i++] = rem + '0';
+n /= 8;
+}
+
+octal[i] = '\0';
+
+for (j = 0; j < i / 2; j++)
+{
+char temp = octal[j];
+octal[j] = octal[i - j - 1];
+octal[i - j - 1] = temp;
+}
+
+return (octal);
+}
+
