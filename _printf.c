@@ -17,7 +17,7 @@ va_list args;
 va_start(args, format);
 count = 0;
 
-for (i = 0; i < _strlen(format); i++)
+for (i = 0; i <= _strlen(format); i++)
 {
 if (format[i] != '%')
 {

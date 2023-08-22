@@ -1,16 +1,32 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stddef.h>
+
+#define BUFSIZE 1024
 
 /**
-* _putchar - a function that writes a character to stdout
-* @c: the character to be written
+* _putchar - writes a character to stdout
+* @c: the character to write
 *
-* Return: the number of characters written, or -1 on error
+* Return: 1 on success, -1 on error
 */
 int _putchar(char c)
 {
-return (write(1, &c, 1));
+static char buf[BUFSIZE];
+static size_t i;
+
+if (c == '\0' || i >= BUFSIZE)
+{
+if (write(1, buf, i) != (ssize_t)i)
+return (-1);
+i = 0;
+}
+
+if (c != '\0')
+buf[i++] = c;
+
+return (1);
 }
 
 /**
