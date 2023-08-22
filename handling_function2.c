@@ -64,3 +64,26 @@ int handling_octal(char next, va_list args)
 	}
 	return (0);
 }
+
+/**
+ * handling_hex_upper - handles the uppercase hexadecimal conversion specifier
+ * @next: the next character after the specifier
+ * @args: the argument list
+ *
+ * Return: the number of characters printed
+ */
+int handling_hex_upper(char next, va_list args)
+{
+	int count;
+	unsigned int value;
+	char *hex_upper;
+
+	if (next == 'X')
+	{
+		value = va_arg(args, unsigned int);
+		hex_upper = uint_to_hex_upper(value);
+		count = print_hex_upper(hex_upper);
+		return (count);
+	}
+	return (0);
+}

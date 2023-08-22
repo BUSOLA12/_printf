@@ -21,6 +21,8 @@ int handling_uint(char next, va_list args);
 int handling_rstr(char next, va_list args);
 int handle_format_specifiers(char next, va_list args);
 int handling_octal(char next, va_list args);
+int handling_hex(char next, va_list args);
+int handling_hex_upper(char next, va_list args);
 
 
 /*print functions*/
@@ -31,6 +33,8 @@ int print_binary(char *binary);
 int print_uint(unsigned int x);
 int print_reverse(char *str);
 int print_octal(char *octal);
+int print_hex(char *hex);
+int print_hex_upper(char *hex);
 
 
 
@@ -41,5 +45,7 @@ char *_strchr(const char *s, int c);
 int count_int_chars(int num);
 char *int_to_binary(unsigned int n);
 char *uint_to_octal(unsigned int n);
+char *uint_to_hex(unsigned int n);
+char *uint_to_hex_upper(unsigned int n);
 
 #endif

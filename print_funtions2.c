@@ -69,3 +69,28 @@ _putchar(octal[i]);
 return (len);
 }
 
+#include <stddef.h>
+
+/**
+* print_hex_upper - prints an uppercase hexadecimal string using _putchar
+* @hex: the hexadecimal string to print
+*
+* Return: the number of characters printed
+*/
+int print_hex_upper(char *hex)
+{
+int count = 0;
+
+if (!hex)
+return (0);
+
+while (*hex)
+{
+_putchar(*hex++);
+count++;
+}
+
+return (count);
+}
+
+

@@ -82,3 +82,28 @@ _putchar(str[i]);
 return (len);
 }
 
+
+#include <stddef.h>
+
+/**
+* print_hex - prints a hexadecimal string using _putchar
+* @hex: the hexadecimal string to print
+*
+* Return: the number of characters printed
+*/
+int print_hex(char *hex)
+{
+int count = 0;
+
+if (!hex)
+return (0);
+
+while (*hex)
+{
+_putchar(*hex++);
+count++;
+}
+
+return (count);
+}
+

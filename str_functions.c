@@ -101,3 +101,67 @@ octal[i - j - 1] = temp;
 return (octal);
 }
 
+
+#include <stdlib.h>
+
+/**
+* uint_to_hex - converts an unsigned int to a hexadecimal string
+* @n: the unsigned int to convert
+*
+* Return: the resulting hexadecimal string
+*/
+char *uint_to_hex(unsigned int n)
+{
+char *hex = malloc(9);
+char *hex_digits = "0123456789abcdef";
+int i = 7;
+
+if (!hex)
+return (NULL);
+
+hex[8] = '\0';
+
+while (n)
+{
+hex[i--] = hex_digits[n % 16];
+n /= 16;
+}
+
+while (i >= 0)
+hex[i--] = '0';
+
+return (hex);
+}
+
+
+#include <stdlib.h>
+
+/**
+* uint_to_hex_upper - converts an unsigned int to a hexadecimal string
+* @n: the unsigned int to convert
+*
+* Return: the resulting hexadecimal string
+*/
+char *uint_to_hex_upper(unsigned int n)
+{
+char *hex = malloc(9);
+char *hex_digits = "0123456789ABCDEF";
+int i = 7;
+
+if (!hex)
+return (NULL);
+
+hex[8] = '\0';
+
+while (n)
+{
+hex[i--] = hex_digits[n % 16];
+n /= 16;
+}
+
+while (i >= 0)
+hex[i--] = '0';
+
+return (hex);
+}
+
