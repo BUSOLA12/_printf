@@ -10,6 +10,9 @@
 */
 int _printf(const char *format, ...)
 {
+int value;
+char *str = "(null)";
+int j = 0;
 size_t count;
 char next;
 size_t i;
@@ -29,8 +32,20 @@ else
 next = format[i + 1];
 if (next == 'c')
 {
-_putchar(va_arg(args, int));
+value = va_arg(args, int);
+if (value == '\0')
+{
+while (str)
+{
+_putchar(str[j]);
+j++;
+}
+}
+else
+{
+_putchar(value);
 count += 1;
+}
 }
 count += handle_format_specifiers(next, args);
 i++;

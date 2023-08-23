@@ -36,54 +36,63 @@ int count = 0;
 if (next == 's')
 {
 str = va_arg(args, char *);
+if (str == NULL)
+{
+print_string("(null)");
+count += 6;
+}
+else
+{
 print_string(str);
 count += _strlen(str);
+}
 return (count);
 }
 return (0);
 }
+
 /**
- * handling_octal - handles the octal conversion specifier
- * @next: the next character after the specifier
- * @args: the argument list
- *
- * Return: the number of characters printed
- */
+* handling_octal - handles the octal conversion specifier
+* @next: the next character after the specifier
+* @args: the argument list
+*
+* Return: the number of characters printed
+*/
 int handling_octal(char next, va_list args)
 {
-	int count;
-	unsigned int value;
-	char *octal;
+int count;
+unsigned int value;
+char *octal;
 
-	if (next == 'o')
-	{
-		value = va_arg(args, unsigned int);
-		octal = uint_to_octal(value);
-		count = print_octal(octal);
-		return (count);
-	}
-	return (0);
+if (next == 'o')
+{
+value = va_arg(args, unsigned int);
+octal = uint_to_octal(value);
+count = print_octal(octal);
+return (count);
+}
+return (0);
 }
 
 /**
- * handling_hex_upper - handles the uppercase hexadecimal conversion specifier
- * @next: the next character after the specifier
- * @args: the argument list
- *
- * Return: the number of characters printed
- */
+* handling_hex_upper - handles the uppercase hexadecimal conversion specifier
+* @next: the next character after the specifier
+* @args: the argument list
+*
+* Return: the number of characters printed
+*/
 int handling_hex_upper(char next, va_list args)
 {
-	int count;
-	unsigned int value;
-	char *hex_upper;
+int count;
+unsigned int value;
+char *hex_upper;
 
-	if (next == 'X')
-	{
-		value = va_arg(args, unsigned int);
-		hex_upper = uint_to_hex_upper(value);
-		count = print_hex_upper(hex_upper);
-		return (count);
-	}
-	return (0);
+if (next == 'X')
+{
+value = va_arg(args, unsigned int);
+hex_upper = uint_to_hex_upper(value);
+count = print_hex_upper(hex_upper);
+return (count);
+}
+return (0);
 }
