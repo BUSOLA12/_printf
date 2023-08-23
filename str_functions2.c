@@ -39,3 +39,30 @@ if (c == '\0')
 return ((char *)s);
 return (NULL);
 }
+
+/**
+* _strcmp - compares two strings
+* @s1: first string to compare
+* @s2: second string to compare
+*
+* Description: This function compares
+* two strings character by character.
+* It takes two const char * arguments,
+* representing the two strings to
+* compare, and returns an int value
+* indicating the result of the comparison.
+*
+* Return: 0 if s1 and s2 are equal,
+* a positive value if s1 is greater than s2,
+* or a negative value if s1 is less than s2.
+*/
+int _strcmp(const char *s1, const char *s2)
+{
+while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+{
+s1++;
+s2++;
+}
+return (*s1 - *s2);
+}
+

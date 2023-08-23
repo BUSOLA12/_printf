@@ -47,5 +47,6 @@ char *int_to_binary(unsigned int n);
 char *uint_to_octal(unsigned int n);
 char *uint_to_hex(unsigned int n);
 char *uint_to_hex_upper(unsigned int n);
+int _strcmp(const char *s1, const char *s2);
 
 #endif
