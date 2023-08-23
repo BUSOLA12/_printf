@@ -26,7 +26,7 @@ int handling_hex_upper(char next, va_list args);
 
 
 /*print functions*/
-int _putchar(char c);
+void _putchar(char c);
 void print_string(const char *str);
 void print_int(int n);
 int print_binary(char *binary);

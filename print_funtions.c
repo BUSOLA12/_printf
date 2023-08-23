@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-#define BUFSIZE 1024
 
 /**
 * _putchar - writes a character to stdout
@@ -11,24 +10,10 @@
 *
 * Return: 1 on success, -1 on error
 */
-int _putchar(char c)
+void _putchar(char c)
 {
-static char buf[BUFSIZE];
-static size_t i;
-
-if (c == '\0' || i >= BUFSIZE)
-{
-if (write(1, buf, i) != (ssize_t)i)
-return (-1);
-i = 0;
+  write(1, &c, 1);
 }
-
-if (c != '\0')
-buf[i++] = c;
-
-return (1);
-}
-
 /**
 * print_string - a function that prints a string to stdout
 * @str: the string to be printed
